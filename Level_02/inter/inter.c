@@ -1,15 +1,15 @@
 #include <unistd.h>
 
-int	check_doubles(char *str, char c, int pos)
+int	ft_check(char *str, int i)
 {
-	int i;
+	int	j;
 
-	i = 0;
-	while (i < pos)
+	j = 0;
+	while (i > j)
 	{
-		if (str[i] == c)
+		if (str[j] == str[i])
 			return (0);
-		i++;
+		j++;
 	}
 	return (1);
 }
@@ -27,11 +27,9 @@ int	main(int ac, char **av)
 		{
 			if (av[1][i] == av[2][j])
 			{
-				if (check_doubles(av[1], av[1][i], i))
-				{
+				if (ft_check(av[1], i))
 					write(1, &av[1][i], 1);
-					break ;
-				}
+				break ;
 			}
 			j++;
 		}
