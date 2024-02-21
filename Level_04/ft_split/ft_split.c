@@ -35,16 +35,14 @@ char	*ft_word(char *str)
 	int		i;
 	char	*word;
 
-	i = 0;
+
 	len_word = ft_strlen_sep(str);
 	word = (char *)malloc(sizeof(char) * (len_word + 1));
-	if (word == NULL)
+	if (!word)
 		return (NULL);
-	while (i < len_word)
-	{
+	i = -1;
+	while (++i < len_word)
 		word[i] = str[i];
-		i++;
-	}
 	word[i] = '\0';
 	return (word);
 }
@@ -67,7 +65,7 @@ char	**ft_split(char *str)
 		while (*str && !(*str == ' ' || *str == '\t' || *str == '\n'))
 			str++;
 	}
-	strings[i] = 0;
+	strings[i] = '\0';
 	return (strings);
 }
 

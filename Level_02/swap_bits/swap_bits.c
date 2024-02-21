@@ -18,7 +18,7 @@ unsigned char	swap_bits(unsigned char octet)
 	return (res);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <stdlib.h>
 
 int	main(int ac, char **av)
@@ -27,4 +27,4 @@ int	main(int ac, char **av)
 	{
 		printf("%d\n", swap_bits((unsigned char)atoi(av[1])));
 	}
-}
+} */
