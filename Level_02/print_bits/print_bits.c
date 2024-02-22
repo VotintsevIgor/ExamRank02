@@ -8,21 +8,17 @@ void	print_bits(unsigned char octet)
 	while (i > 0)
 	{
 		if (octet >= i)
-		{
 			write(1, "1", 1);
-			octet %= i;
-			i /= 2;
-		}
 		else
-		{
 			write(1, "0", 1);
-			i /= 2;
-		}
+		octet %= i;
+		i /= 2;
 	}
 }
 
-/*
-int main(int ac, char **av)
+
+/* int main(int ac, char **av)
 {
 	print_bits((unsigned char)atoi(av[1]));
 } */
+
