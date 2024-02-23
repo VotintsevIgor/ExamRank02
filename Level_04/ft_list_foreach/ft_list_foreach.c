@@ -12,6 +12,7 @@ void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 	}
 }
 
+/*
 void multiply_by_2(void *num)
 {
 	*(int *)num *= 2;
@@ -20,12 +21,24 @@ void multiply_by_2(void *num)
 
 #include <stdlib.h>
 
+void	print_list(t_list *list)
+{
+	while (list)
+	{
+		printf("%d", *(int *)list->data);
+		list = list->next;
+		if (list)
+			printf(", ");
+	}
+	printf("\n");
+}
+
 int main()
 {
 	t_list *list;
 	t_list *head;
 	int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	int	i;
+	unsigned int	i;
 
 
 	list = malloc(sizeof(t_list));
@@ -43,6 +56,15 @@ int main()
 			list->next = NULL;
 		i++;
 	}
+	print_list(head);
+	ft_list_foreach(head, multiply_by_2);
+	print_list(head);
+	list = head;
+	while (head)
+	{
+		list = head;
+		head = head->next;
+		free(list);
+	}
+} */
 
-
-}
